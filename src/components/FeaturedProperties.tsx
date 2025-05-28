@@ -1,9 +1,26 @@
-
 import { Heart, Eye, MapPin, Bed, Bath, Square } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
+import { useToast } from '@/hooks/use-toast';
 
 const FeaturedProperties = () => {
+  const { toast } = useToast();
+
+  const handleFavorite = (propertyTitle: string) => {
+    toast({
+      title: "Ajouté aux favoris !",
+      description: `${propertyTitle} a été ajouté à votre liste de favoris.`,
+    });
+  };
+
+  const handleView = (propertyTitle: string) => {
+    toast({
+      title: "Vue enregistrée",
+      description: `Vous avez consulté ${propertyTitle}.`,
+    });
+  };
+
   const properties = [
     {
       id: 1,
@@ -69,21 +86,29 @@ const FeaturedProperties = () => {
             <div key={property.id} className="group cursor-pointer">
               <div className="bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
                 <div className="relative">
-                  <img 
-                    src={property.image}
-                    alt={property.title}
-                    className="w-full h-48 object-cover"
-                  />
+                  <Link to={`/property/${property.id}`}>
+                    <img 
+                      src={property.image}
+                      alt={property.title}
+                      className="w-full h-48 object-cover"
+                    />
+                  </Link>
                   <div className="absolute top-4 left-4">
                     <Badge className="bg-primary-500 text-white">
                       {property.status}
                     </Badge>
                   </div>
                   <div className="absolute top-4 right-4 flex space-x-2">
-                    <button className="bg-white/90 p-2 rounded-full hover:bg-white transition-colors">
+                    <button 
+                      className="bg-white/90 p-2 rounded-full hover:bg-white transition-colors"
+                      onClick={() => handleFavorite(property.title)}
+                    >
                       <Heart className="w-4 h-4 text-gray-600" />
                     </button>
-                    <button className="bg-white/90 p-2 rounded-full hover:bg-white transition-colors">
+                    <button 
+                      className="bg-white/90 p-2 rounded-full hover:bg-white transition-colors"
+                      onClick={() => handleView(property.title)}
+                    >
                       <Eye className="w-4 h-4 text-gray-600" />
                     </button>
                   </div>
@@ -120,9 +145,11 @@ const FeaturedProperties = () => {
                     </div>
                   </div>
                   
-                  <Button className="w-full bg-primary-500 hover:bg-primary-600 text-white">
-                    Voir les détails
-                  </Button>
+                  <Link to={`/property/${property.id}`}>
+                    <Button className="w-full bg-primary-500 hover:bg-primary-600 text-white">
+                      Voir les détails
+                    </Button>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -130,9 +157,11 @@ const FeaturedProperties = () => {
         </div>
         
         <div className="text-center mt-12">
-          <Button variant="outline" size="lg" className="border-primary-500 text-primary-500 hover:bg-primary-500 hover:text-white">
-            Voir toutes les propriétés
-          </Button>
+          <Link to="/properties">
+            <Button variant="outline" size="lg" className="border-primary-500 text-primary-500 hover:bg-primary-500 hover:text-white">
+              Voir toutes les propriétés
+            </Button>
+          </Link>
         </div>
       </div>
     </section>

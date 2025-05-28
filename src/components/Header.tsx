@@ -16,7 +16,7 @@ const Header = () => {
             </div>
             <div className="flex items-center space-x-2">
               <Mail className="w-4 h-4" />
-              <span>contact@immobilier.fr</span>
+              <span>contact@veedgo.fr</span>
             </div>
           </div>
           <div className="flex items-center space-x-4">
@@ -35,18 +35,22 @@ const Header = () => {
           <nav className="hidden lg:flex items-center space-x-8">
             <Link to="/" className="text-gray-700 hover:text-primary-500 font-medium transition-colors">Accueil</Link>
             <Link to="/properties" className="text-gray-700 hover:text-primary-500 font-medium transition-colors">Propriétés</Link>
-            <a href="#" className="text-gray-700 hover:text-primary-500 font-medium transition-colors">Services</a>
-            <a href="#" className="text-gray-700 hover:text-primary-500 font-medium transition-colors">À propos</a>
-            <a href="#" className="text-gray-700 hover:text-primary-500 font-medium transition-colors">Contact</a>
+            <Link to="/services" className="text-gray-700 hover:text-primary-500 font-medium transition-colors">Services</Link>
+            <Link to="/about" className="text-gray-700 hover:text-primary-500 font-medium transition-colors">À propos</Link>
+            <Link to="/contact" className="text-gray-700 hover:text-primary-500 font-medium transition-colors">Contact</Link>
           </nav>
           
           <div className="flex items-center space-x-4">
-            <Button variant="outline" className="hidden md:flex">
-              Se connecter
-            </Button>
-            <Button className="bg-primary-500 hover:bg-primary-600 text-white">
-              Déposer une annonce
-            </Button>
+            <Link to="/login">
+              <Button variant="outline" className="hidden md:flex">
+                Se connecter
+              </Button>
+            </Link>
+            <Link to="/register">
+              <Button className="bg-primary-500 hover:bg-primary-600 text-white">
+                Déposer une annonce
+              </Button>
+            </Link>
             <Button variant="ghost" size="icon" className="lg:hidden">
               <Menu className="w-6 h-6" />
             </Button>
