@@ -1,6 +1,7 @@
 
 import { Menu, Phone, Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   return (
@@ -26,12 +27,14 @@ const Header = () => {
         {/* Main navigation */}
         <div className="flex justify-between items-center py-4">
           <div className="flex items-center">
-            <h1 className="text-2xl font-bold text-primary-600">VeedGo</h1>
+            <Link to="/">
+              <h1 className="text-2xl font-bold text-primary-600">VeedGo</h1>
+            </Link>
           </div>
           
           <nav className="hidden lg:flex items-center space-x-8">
-            <a href="#" className="text-gray-700 hover:text-primary-500 font-medium transition-colors">Accueil</a>
-            <a href="#" className="text-gray-700 hover:text-primary-500 font-medium transition-colors">Propriétés</a>
+            <Link to="/" className="text-gray-700 hover:text-primary-500 font-medium transition-colors">Accueil</Link>
+            <Link to="/properties" className="text-gray-700 hover:text-primary-500 font-medium transition-colors">Propriétés</Link>
             <a href="#" className="text-gray-700 hover:text-primary-500 font-medium transition-colors">Services</a>
             <a href="#" className="text-gray-700 hover:text-primary-500 font-medium transition-colors">À propos</a>
             <a href="#" className="text-gray-700 hover:text-primary-500 font-medium transition-colors">Contact</a>

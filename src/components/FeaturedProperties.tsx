@@ -8,7 +8,7 @@ const FeaturedProperties = () => {
     {
       id: 1,
       image: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80",
-      price: "1 750 000",
+      price: "875 000 000",
       title: "Villa Moderne Luxueuse",
       location: "Nice, Côte d'Azur",
       beds: 5,
@@ -19,7 +19,7 @@ const FeaturedProperties = () => {
     {
       id: 2,
       image: "https://images.unsplash.com/photo-1600047509358-9dc75507daeb?auto=format&fit=crop&w=800&q=80",
-      price: "890 000",
+      price: "445 000 000",
       title: "Appartement Vue Mer",
       location: "Cannes, Alpes-Maritimes",
       beds: 3,
@@ -30,7 +30,7 @@ const FeaturedProperties = () => {
     {
       id: 3,
       image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80",
-      price: "2 250 000",
+      price: "1 125 000 000",
       title: "Maison Contemporaine",
       location: "Paris 16ème",
       beds: 6,
@@ -41,7 +41,7 @@ const FeaturedProperties = () => {
     {
       id: 4,
       image: "https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=800&q=80",
-      price: "1 450 000",
+      price: "725 000 000",
       title: "Villa avec Piscine",
       location: "Aix-en-Provence",
       beds: 4,
@@ -92,7 +92,7 @@ const FeaturedProperties = () => {
                 <div className="p-6">
                   <div className="flex items-center justify-between mb-3">
                     <span className="text-2xl font-bold text-primary-500">
-                      {property.price}€
+                      {property.price} FCFA
                     </span>
                   </div>
                   
